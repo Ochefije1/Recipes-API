@@ -1,0 +1,53 @@
+<!-- recipes.html -->
+{% extends 'base.html' %} {% block content %}
+
+<h1>Welcome to Local Delicacies API</h1>
+<p>Use the provided API endpoints to manage local delicacies and recipes.</p>
+
+<!-- Content specific to the home page -->
+<h1>Welcome to the Home Page</h1>
+<!-- Add more content as needed -->
+
+<body>
+  <h1>Local Delicacies API</h1>
+
+  <h2>Recipes</h2>
+  <ul>
+    <li><strong>POST /recipes/</strong>: Create a recipe</li>
+    <li><strong>GET /recipes/</strong>: Get all recipes</li>
+    <li><strong>GET /recipes/{id}/</strong>: Get a particular recipe</li>
+    <li><strong>PUT /recipes/{id}/</strong>: Update a recipe</li>
+    <li><strong>DELETE /recipes/{id}/</strong>: Remove a recipe</li>
+  </ul>
+
+  <h2>Ingredients</h2>
+  <ul>
+    <li>
+      <strong>GET /recipes/{id}/ingredients/</strong>: Get all ingredients for a
+      particular recipe
+    </li>
+    <li>
+      <strong>GET /recipes/{id}/ingredients/{ingredientId}/</strong>: Get a
+      particular ingredient of a recipe
+    </li>
+    <li>
+      <strong>POST /recipes/{id}/ingredients/{ingredientId}/</strong>: Create an
+      ingredient for a recipe
+    </li>
+    <li>
+      <strong>PUT /recipes/{id}/ingredients/{ingredientId}/</strong>: Update the
+      ingredient of a recipe
+    </li>
+  </ul>
+
+  <h2>Tags</h2>
+  <ul>
+    <li>
+      <strong>GET /recipes/tags/</strong>: Get all tags associated with recipes
+    </li>
+    <li><strong>POST /recipes/tags/</strong>: Create a tag</li>
+    <li><strong>GET /recipes/tags/{id}/</strong>: Get a particular tag</li>
+    <li><strong>PUT /recipes/tags/{id}/</strong>: Update a tag</li>
+    <li><strong>DELETE /recipes/tags/{id}/</strong>: Remove a tag</li>
+  </ul>
+
