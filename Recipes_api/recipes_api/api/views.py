@@ -1,35 +1,23 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from api.models import Recipe, Ingredient, Tag
 from api.serializers import RecipeSerializer, IngredientSerializer, TagSerializer
 
 # Create your views here.
 
 
-def recipes(request):
-    return render(request, 'recipes.html')
-
-class RecipeListCreateView(generics.ListCreateAPIView):
+class RecipeViewSet(viewsets.ModelViewSet):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
 
-class RecipeRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Recipe.objects.all()
-    serializer_class = RecipeSerializer
 
-class IngredientListCreateView(generics.ListCreateAPIView):
+class IngredientViewSet(viewsets.ModelViewSet):
     queryset = Ingredient.objects.all()
     serializer_class = IngredientSerializer
 
-class IngredientRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Ingredient.objects.all()
-    serializer_class = IngredientSerializer
 
-class TagListCreateView(generics.ListCreateAPIView):
+class TagViewSet(viewsets.ModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
 
-class TagRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Tag.objects.all()
-    serializer_class = TagSerializer
 
