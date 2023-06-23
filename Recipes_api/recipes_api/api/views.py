@@ -5,7 +5,6 @@ from api.serializers import RecipeSerializer, IngredientSerializer, TagSerialize
 
 # Create your views here.
 
-
 class RecipeViewSet(viewsets.ModelViewSet):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer

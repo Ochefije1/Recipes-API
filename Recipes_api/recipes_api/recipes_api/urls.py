@@ -6,18 +6,12 @@ from rest_framework import routers
 from api.views import *
 
 
-
-
 router = routers.DefaultRouter()
-router.register(r'recipes', RecipeViewSet)
-router.register(r'ingredients', IngredientViewSet)
-router.register(r'tags', TagViewSet)
+router.register('recipe', RecipeViewSet)
+router.register('ingredient', IngredientViewSet)
+router.register('tag', TagViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    
-   
 ]
-
-
